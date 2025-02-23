@@ -6,13 +6,11 @@ type TabProps = {
 };
 
 const Tab: FC<TabProps> = ({ title }) => {
-  return <TabContainer>{title}</TabContainer>;
+  return <StyledTab>{title}</StyledTab>;
 };
 
-const TabContainer = styled.button`
-  background-color: inherit;
-  color: inherit;
-  border: none;
+const StyledTab = styled.button`
+  all: unset;
   cursor: pointer;
   width: fit-content;
   padding: 15px;

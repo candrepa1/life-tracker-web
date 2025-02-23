@@ -1,19 +1,10 @@
+import { FC } from "react";
 import styled from "@emotion/styled";
 
+import { MOCK_CATEGORIES } from "../../data";
 import Tab from "../Tab";
 
-type Categories = {
-  id: number;
-  name: string;
-};
-
-const MOCK_CATEGORIES: Categories[] = [
-  { id: 1, name: "sleep" },
-  { id: 2, name: "workout" },
-  { id: 3, name: "food" },
-];
-
-const Tabs = () => {
+const Tabs: FC = () => {
   return (
     <TabsContainer>
       {MOCK_CATEGORIES.map(({ id, name }) => (
