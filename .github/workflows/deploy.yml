@@ -1,0 +1,8 @@
+name: deploy
+on: [push]
+jobs:
+  push-to-s3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run build
+      - run: aws s3 sync ./dist s3://${{ secrets.BUCKETNAME }}
