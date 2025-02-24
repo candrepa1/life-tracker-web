@@ -2,11 +2,13 @@ import { FC } from "react";
 import styled from "@emotion/styled";
 
 import Tabs from "../../components/Tabs";
+import Sleep from "../../components/Sleep";
 
 const Home: FC = () => {
   return (
     <HomeContainer>
       <Tabs />
+      <Sleep />
     </HomeContainer>
   );
 };

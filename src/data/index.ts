@@ -1,4 +1,4 @@
-import { Categories } from "./types";
+import { Categories, Ranges, Sleep } from "./types";
 
 const MOCK_CATEGORIES: Categories[] = [
   { id: 1, name: "sleep" },
@@ -6,4 +6,18 @@ const MOCK_CATEGORIES: Categories[] = [
   { id: 3, name: "food" },
 ];
 
-export { MOCK_CATEGORIES };
+const MOCK_SLEEP: Sleep[] = [
+  { id: 1, date: "2025-02-19", hours: 8, rating: 9 },
+  { id: 2, date: "2025-02-20", hours: 5, rating: 5 },
+  { id: 3, date: "2025-02-21", hours: 8, rating: 7 },
+  { id: 4, date: "2025-02-22", hours: 7, rating: 6 },
+  { id: 5, date: "2025-02-23", hours: 9, rating: 7 },
+];
+
+const SLEEP_RANGES: Ranges = {
+  excellent: { min: 8, max: 10 },
+  acceptable: { min: 6, max: 8 },
+  poor: { min: 0, max: 5 },
+};
+
+export { MOCK_CATEGORIES, MOCK_SLEEP, SLEEP_RANGES };
