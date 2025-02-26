@@ -12,6 +12,8 @@ const MOCK_SLEEP: Sleep[] = [
   { id: 3, date: "2025-02-21", hours: 8, rating: 7 },
   { id: 4, date: "2025-02-22", hours: 7, rating: 6 },
   { id: 5, date: "2025-02-23", hours: 9, rating: 7 },
+  { id: 6, date: "2025-02-24", hours: 4, rating: 3 },
+  { id: 6, date: "2025-02-25", hours: 6, rating: 5 },
 ];
 
 const SLEEP_RANGES: Ranges = {

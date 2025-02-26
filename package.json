@@ -12,9 +12,9 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@observablehq/plot": "^0.6.17",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "reaviz": "^16.0.3"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

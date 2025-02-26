@@ -2,7 +2,7 @@ import { FC } from "react";
 import styled from "@emotion/styled";
 
 import Tabs from "../../components/Tabs";
-import Sleep from "../../components/Sleep";
+import Sleep from "../Sleep";
 
 const Home: FC = () => {
   return (
