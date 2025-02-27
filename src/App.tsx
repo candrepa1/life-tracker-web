@@ -1,12 +1,11 @@
 import { css, Global } from "@emotion/react";
-
-import Home from "./pages/Home";
+import Routing from "./components/Routing";
 
 function App() {
   return (
     <>
       <Global styles={GlobalStyles} />
-      <Home />
+      <Routing />
     </>
   );
 }
@@ -19,9 +18,13 @@ const GlobalStyles = css`
   }
 
   #root {
-    background-color: #242424;
-    color: rgba(255, 255, 255, 0.87);
+    background-color: #121221;
+    color: #ffffff;
     height: 100vh;
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
   }
 `;
 
