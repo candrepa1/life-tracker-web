@@ -5,7 +5,7 @@ import upperFirst from "lodash/upperFirst";
 import { PiHouse, PiListBold, PiChartLine, PiQuotes } from "react-icons/pi";
 
 const MENU_ITEMS = [
-  { id: 1, name: "dashboard", renderIcon: () => <PiHouse />, route: "/" },
+  { id: 1, name: "dashboard", renderIcon: () => <PiHouse /> },
   { id: 2, name: "entries", renderIcon: () => <PiListBold /> },
   { id: 3, name: "trends", renderIcon: () => <PiChartLine /> },
   { id: 4, name: "insights", renderIcon: () => <PiQuotes /> },
@@ -14,8 +14,8 @@ const MENU_ITEMS = [
 const Tabs: FC = () => {
   return (
     <div>
-      {MENU_ITEMS.map(({ id, name, renderIcon, route }) => (
-        <StyledNavLink key={id} to={route || `/${name}`}>
+      {MENU_ITEMS.map(({ id, name, renderIcon }) => (
+        <StyledNavLink key={id} to={`/${name}`}>
           {({ isActive }) => (
             <TabContainer isActive={isActive}>
               {renderIcon && renderIcon()}

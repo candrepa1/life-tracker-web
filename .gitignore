@@ -25,3 +25,6 @@ dist-ssr
 
 # S3
 bucket-policy.json
+
+# secrets
+.env
