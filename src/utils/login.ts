@@ -9,7 +9,7 @@ const login = () => {
     response_type: "token",
     scope: "openid email profile",
     include_granted_scopes: "true",
-    state: "pass-through value",
+    // state: "pass-through value",
   };
 
   const url = new URL(GOOGLE_OAUTH_LOGIN);

@@ -1,21 +1,72 @@
+import { useEffect, useState } from "react";
+import { Location, useLocation, useNavigate } from "react-router";
 import styled from "@emotion/styled";
 
+import fetchUserData from "../../utils/fetchUserData";
+import logout from "../../utils/logout";
+
+type UserInfo = {
+  sub: string;
+  name?: string;
+  given_name?: string;
+  family_name?: string;
+  picture?: string;
+  email?: string;
+  email_verified?: boolean;
+  locale?: string;
+  hd?: string;
+};
+
 const Profile = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser] = useState<UserInfo | null>(null);
+
+  useEffect(() => {
+    const getUserData = async () => {
+      const token = getTokenFromUrl(location);
+      if (token) {
+        const loggedUser = await fetchUserData(token);
+
+        setUser(loggedUser);
+        setToken(token);
+      }
+    };
+
+    getUserData();
+  }, []);
+
   return (
     <div>
       <DataContainer>
-        <Pic src="https://www.sportschosun.com/images/2025/01/14/hyeri-she-was-hospital-directors-daughterthe-life-43946/hyeri-she-was-hospital-directors-daughterthe-life-4394601.jpg" />
+        <Pic src={user?.picture} />
         <Data>
-          <h1>Hyeri</h1>
+          <h1>{user?.given_name}</h1>
           <p>Paid plan</p>
         </Data>
       </DataContainer>
       <ProfileActions>
-        <StyledButton>Log out</StyledButton>
+        <StyledButton
+          onClick={() => {
+            logout(token as string);
+            navigate("/");
+          }}
+        >
+          Log out
+        </StyledButton>
         <StyledButton isActive>Upgrade</StyledButton>
       </ProfileActions>
     </div>
   );
+};
+
+const getTokenFromUrl = (location: Location) => {
+  const literalParams = location.hash.substring(1);
+  const params = new URLSearchParams(literalParams);
+  const accessToken = params.get("access_token");
+
+  return accessToken;
 };
 
 const DataContainer = styled.div`
